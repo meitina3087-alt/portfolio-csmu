@@ -210,9 +210,10 @@ footer .wrap{padding-block:18px 28px;border-top:1px solid rgba(255,255,255,.15)}
 .why article{border-top:3px solid var(--apricot);padding-top:14px;display:grid;gap:8px;align-content:start;min-width:0}
 .why h3{font-size:19px}
 .why p{font-size:15px;color:var(--muted)}
-.first{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:var(--slate);color:var(--slate-ink);border-radius:12px;padding:18px 22px}
-.first strong{font-family:var(--f-display);font-size:22px}
-.first span{opacity:.85;font-size:15px}
+.first{margin-top:28px;display:flex;flex-direction:column;gap:4px;background:var(--slate);color:var(--slate-ink);border-radius:14px;border-left:6px solid var(--apricot);padding:18px 26px;box-shadow:0 6px 18px rgba(46,58,92,.18)}
+.first .tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#FFD2B3}
+.first strong{font-family:var(--f-display);font-size:clamp(22px,3.6vw,28px);line-height:1.35;text-wrap:balance;color:#FFD2B3}
+.first span{opacity:.9;font-size:15px}
 .hero .first-tag{display:inline-block;margin-left:8px;font-size:13px;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:1px 10px;vertical-align:2px}
 /* field gallery */
 .field{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -231,8 +232,9 @@ footer .wrap{padding-block:18px 28px;border-top:1px solid rgba(255,255,255,.15)}
 
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr}
-  .hero figure{order:-1}
-  .hero figure img{max-width:220px}
+  .hero figure{order:-1;position:relative;padding-top:40px}
+  .hero figure::before{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(290px,80%);height:calc(100% - 8px);border-radius:200px 200px 28px 28px;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06))}
+  .hero figure img{max-width:230px;position:relative;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
   .hero .txt{padding-bottom:36px}
   .quick,.ai-grid,.svc,.plan,.cgrid{grid-template-columns:1fr}
   .plan .stage,.plan .stage+.stage{padding:18px 0;border-left:0;border-bottom:1px solid var(--line)}
@@ -311,7 +313,7 @@ footer .wrap{padding-block:18px 28px;border-top:1px solid rgba(255,255,255,.15)}
       <article><h3>兩度榮獲戒菸國際金獎</h3><p>長期深耕戒菸服務，收案經驗豐富。我已取得戒菸服務人員資格，期待在這裡投入第一線的戒菸服務。</p></article>
       <article><h3>研究資源豐富</h3><p>延續我在 AI 與醫學教育的研究，包括 AI 軟體回答家醫考題準確性的第一作者研究。</p></article>
     </div>
-    <div class="first"><strong>中山醫家醫是我的第一志願</strong><span>希望在中山醫家庭醫學部完成訓練，成為在地家庭信賴的家庭醫師。</span></div>
+    <div class="first"><p class="tag">First choice</p><strong>中山醫家醫是我的第一志願</strong><span>希望在中山醫家庭醫學部完成訓練，成為在地家庭信賴的家庭醫師。</span></div>
   </div>
 </section>
 
